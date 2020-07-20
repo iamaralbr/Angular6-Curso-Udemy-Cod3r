@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { RestaurantsService } from 'src/app/restaurants/restaurants.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { _PATH_REACTION, Review } from './reviews.model';
+import { Review } from './reviews.model'
+import { _PATH_REACTION } from '../../../../shared/constant';
 
 @Component({
   selector: 'mt-reviews',

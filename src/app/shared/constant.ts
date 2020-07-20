@@ -1,0 +1,1 @@
+export const _PATH_REACTION: string = 'assets/img/reactions'
