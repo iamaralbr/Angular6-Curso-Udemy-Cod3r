@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs/internal/Observable'
 import { catchError } from 'rxjs/operators';
-import { Restaurant } from '../restaurants/restaurant/restaurant.model'
-import { MEAT_API } from '../app.api'
-import { ErrorHandler } from '../app.error-handler'
-import { Review } from '../restaurants/restaurant/restaurant-detail/reviews/reviews.model';
-import { MenuItem } from '../restaurants/restaurant/restaurant-detail/menu/menu-item/menu-item.model';
+import { Restaurant } from '../../restaurants/restaurant/restaurant.model'
+import { MEAT_API } from '../../app.api'
+import { ErrorHandler } from '../../app.error-handler'
+import { Review } from '../../restaurants/restaurant/restaurant-detail/reviews/reviews.model';
+import { MenuItem } from '../../restaurants/restaurant/restaurant-detail/menu/menu-item/menu-item.model';
 
 @Injectable()
 export class RestaurantsService {

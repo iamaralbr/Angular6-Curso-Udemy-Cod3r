@@ -6,9 +6,9 @@ import { InputComponent } from './input/input.component';
 import { RadioComponent } from './radio/radio.component'
 import { RatingComponent } from './rating/rating.component'
 
-import { RestaurantsService } from '../core/restaurants.service'
-import { ShoppingCartService } from '../core/shopping-cart.service'
-import { OrderService } from '../core/order.service'
+import { RestaurantsService } from './services/restaurants.service'
+import { ShoppingCartService } from './services/shopping-cart.service'
+import { OrderService } from './services/order.service'
 
 @NgModule({
   declarations: [
