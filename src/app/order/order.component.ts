@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms'
 import { Router } from '@angular/router'
 import { RadioOption } from '../shared/radio/radio-option.model';
-import { OrderService } from './order.service';
+import { OrderService } from '../core/order.service';
 import { CartItem } from '../restaurants/restaurant/restaurant-detail/menu/shopping-cart/cart-item.model';
 import { Order, OrderItem } from './order.model'
 import { _EMAIL_PATTERN, _NUMBER_PATTERN } from '../shared/patterns'

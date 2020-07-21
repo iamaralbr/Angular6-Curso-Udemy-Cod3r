@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable } from 'rxjs/internal/Observable'
 import { MEAT_API } from '../app.api'
-import { ShoppingCartService } from '../restaurants/restaurant/restaurant-detail/menu/shopping-cart/shopping-cart.service';
+import { ShoppingCartService } from './shopping-cart.service';
 import { CartItem } from '../restaurants/restaurant/restaurant-detail/menu/shopping-cart/cart-item.model';
-import { Order } from './order.model';
+import { Order } from '../order/order.model';
 
 @Injectable()
 export class OrderService {
