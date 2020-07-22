@@ -31,7 +31,7 @@ import { OrderService } from './services/order.service'
   ]
 })
 export class SharedModule { 
-  static forRoot(): ModuleWithProviders<any> {
+  static forRoot(): ModuleWithProviders<SharedModule> {
     return {
       ngModule: SharedModule,
       providers: [
