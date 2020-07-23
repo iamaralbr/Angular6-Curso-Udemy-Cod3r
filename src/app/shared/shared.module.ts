@@ -5,16 +5,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { InputComponent } from './input/input.component';
 import { RadioComponent } from './radio/radio.component'
 import { RatingComponent } from './rating/rating.component'
+import { SnackbarComponent } from './messages/snackbar/snackbar.component'
 
 import { RestaurantsService } from './services/restaurants.service'
 import { ShoppingCartService } from './services/shopping-cart.service'
-import { OrderService } from './services/order.service'
+import { OrderService } from './services/order.service';
+import { NotificationService } from './services/notification.service'
 
 @NgModule({
   declarations: [
     InputComponent,
     RadioComponent,
-    RatingComponent
+    RatingComponent,
+    SnackbarComponent
   ],
   imports: [
     CommonModule,
@@ -25,6 +28,7 @@ import { OrderService } from './services/order.service'
     InputComponent,
     RadioComponent,
     RatingComponent,
+    SnackbarComponent,
     CommonModule,
     FormsModule,
     ReactiveFormsModule
@@ -37,7 +41,8 @@ export class SharedModule {
       providers: [
         RestaurantsService, // forma reduzida: cria uma instância da class (service) RestaurantsService, Singletron
         { provide: ShoppingCartService, useClass: ShoppingCartService }, // forma mais 'verbosa'
-        OrderService
+        OrderService,
+        NotificationService
       ]
     }
   }

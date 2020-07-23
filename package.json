@@ -20,11 +20,13 @@
     "@angular/platform-browser-dynamic": "~10.0.4",
     "@angular/router": "~10.0.4",
     "admin-lte": "2.3.11",
+    "classlist.js": "^1.1.20150312",
     "core-js": "3.6.5",
     "font-awesome": "4.7.0",
     "jquery": "3.5.1",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
+    "web-animations-js": "^2.3.2",
     "zone.js": "~0.10.3"
   },
   "devDependencies": {
