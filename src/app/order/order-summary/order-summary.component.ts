@@ -13,4 +13,8 @@ export class OrderSummaryComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  rate(): void {
+    this.rated = true
+  }
+
 }
