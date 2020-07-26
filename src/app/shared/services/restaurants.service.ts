@@ -13,8 +13,8 @@ export class RestaurantsService {
 
   constructor(private http: HttpClient) { }
 
-  restaurants(): Observable<Restaurant[]> {
-    return this.http.get<Restaurant[]>(`${MEAT_API}/restaurants`)
+  restaurants(search: string = ''): Observable<Restaurant[]> {
+    return this.http.get<Restaurant[]>(`${MEAT_API}/restaurants`, {params: {q: search}}) // 'q'parametro generico do json-server para buscar em todos os dados em restaurants
       .pipe(catchError(ErrorHandler.handleError))
   }
 
