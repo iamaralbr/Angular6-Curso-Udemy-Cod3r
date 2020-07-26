@@ -6,10 +6,11 @@ export class ErrorHandler {
     let errorMessage = '';
     if (error instanceof HttpErrorResponse) {
         // client-side error
-        errorMessage = `Erro ${error.status} ao acessar a URL ${error.url} - ${error.statusText}`;
+        const body = error.error
+        errorMessage = `${error.url}: ${error.status} - ${error.statusText || ''} ${body}`
     } else {
         // server-side error
-        errorMessage = `Error Code: ${error.status}\nMessage: ${error.error.message}`;
+        errorMessage = error.message ? error.message : error.toString()
     }
     console.log(errorMessage);
     return throwError(errorMessage);

@@ -1,6 +1,5 @@
 class Order {
   constructor(
-    public id: number,
     public name: string,
     public email: string,
     public emailConfirmation: string,
@@ -8,8 +7,9 @@ class Order {
     public number: number,
     public optionalAddress: string,
     public paymentOption: string,
-    public orderItems: OrderItem[] = []
-  ) { }
+    public orderItems: OrderItem[] = [],
+    public id?: number
+    ) { }
 }
 
 class OrderItem {
