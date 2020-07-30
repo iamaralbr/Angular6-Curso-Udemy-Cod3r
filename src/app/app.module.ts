@@ -1,11 +1,13 @@
 import '@angular/common/locales/global/pt';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, LOCALE_ID } from '@angular/core';
+import { NgModule, LOCALE_ID, ErrorHandler } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common'
 import { SharedModule } from './shared/shared.module';
+
+import { ApplicationErrorHandler } from './app.error-handler'
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -48,7 +50,8 @@ import { UserDetailComponent } from './header/user-detail/user-detail.component'
   ],
   providers: [
     //{ provide: LocationStrategy, useClass: HashLocationStrategy},
-    { provide: LOCALE_ID, useValue: 'pt' }
+    { provide: LOCALE_ID, useValue: 'pt' },
+    { provide: ErrorHandler, useClass: ApplicationErrorHandler }
   ], 
   bootstrap: [AppComponent]
 })
