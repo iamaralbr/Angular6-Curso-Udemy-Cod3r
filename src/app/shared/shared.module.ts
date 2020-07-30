@@ -11,6 +11,10 @@ import { RestaurantsService } from './services/restaurants.service'
 import { ShoppingCartService } from './services/shopping-cart.service'
 import { OrderService } from './services/order.service';
 import { NotificationService } from './services/notification.service'
+import { LoginService } from './services/login.service'
+
+import { LoggedInGuard } from '../security/loggedin.guard'
+import { LeaveOrderGuard } from '../order/leave-order.guard'
 
 @NgModule({
   declarations: [
@@ -42,7 +46,10 @@ export class SharedModule {
         RestaurantsService, // forma reduzida: cria uma instância da class (service) RestaurantsService, Singletron
         { provide: ShoppingCartService, useClass: ShoppingCartService }, // forma mais 'verbosa'
         OrderService,
-        NotificationService
+        NotificationService,
+        LoginService,
+        LoggedInGuard,
+        LeaveOrderGuard
       ]
     }
   }

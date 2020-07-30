@@ -11,7 +11,7 @@ export const handleAuthorization = (req: Request, res: Response, next: NextFunct
     res.status(401).json({ message: 'Você precisa se autenticar.' })
   } else {
     jwt.verify(token, apiConfig.secret, (error: Error, decoded: object | string) => {
-      if(decoded) {
+      if (decoded) {
         next()
       } else {
         res.status(403).json({ message: 'Não autorizado.' })
@@ -22,12 +22,14 @@ export const handleAuthorization = (req: Request, res: Response, next: NextFunct
 
 function extractToken(req: Request): string | undefined {
   let token = undefined
-  if(req.headers && req.headers.authorization) {
-    // Authorization: Bearer ZZZ.ZZZ.ZZZ
-    const parts: string[] = req.headers.authorization.split(' ')
-    if(parts.length === 2 && parts[0] === 'Bearer') {
-      token = parts[1]
+  if (req.headers) {
+    const authorization: string | undefined = req.headers.authorization
+    if (authorization) { // Authorization: Bearer ZZZ.ZZZ.ZZZ
+      const parts: string[] = authorization.split(' ')
+      if (parts.length === 2 && parts[0] === 'Bearer') {
+        token = parts[1]
+      }
     }
+    return token
   }
-  return token
 }

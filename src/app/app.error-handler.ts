@@ -12,7 +12,6 @@ export class ErrorHandler {
         // server-side error
         errorMessage = error.message ? error.message : error.toString()
     }
-    console.log(errorMessage);
     return throwError(errorMessage);
   }  
 }

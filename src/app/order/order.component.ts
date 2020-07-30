@@ -7,6 +7,7 @@ import { CartItem } from '../restaurants/restaurant/restaurant-detail/menu/shopp
 import { Order, OrderItem } from './order.model'
 import { _EMAIL_PATTERN, _NUMBER_PATTERN } from '../shared/patterns'
 import { compare } from '../shared/closure'
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'mt-order',
@@ -17,6 +18,8 @@ export class OrderComponent implements OnInit {
   orderForm: FormGroup
 
   private _delivery: number = 8
+
+  orderId: number
 
   paymentOptions: RadioOption[] = [
     { label: 'Dinheiro', value: 'MON' },
@@ -81,10 +84,16 @@ export class OrderComponent implements OnInit {
     this.orderService.remove(item)
   }
 
+  isOrderCompleted(): boolean {
+    return this.orderId !== undefined
+  }
+
   checkOrder(order: Order) {
     order.orderItems = this.cartItems()
       .map((item: CartItem): OrderItem => new OrderItem(item.quantity, item.menuItem.id))
-    this.orderService.checkOrder(order).subscribe(() => {
+    this.orderService.checkOrder(order).pipe(
+      tap((order: Order) => this.orderId = order.id)
+    ).subscribe(() => {
       this.router.navigate(['/order-summary'])
       this.orderService.clear()
     })

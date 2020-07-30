@@ -18,7 +18,9 @@ import { ShoppingCartComponent } from './restaurants/restaurant/restaurant-detai
 import { MenuItemComponent } from './restaurants/restaurant/restaurant-detail/menu/menu-item/menu-item.component';
 import { ReviewsComponent } from './restaurants/restaurant/restaurant-detail/reviews/reviews.component'
 import { OrderSummaryComponent } from './order/order-summary/order-summary.component';
-import { NotFoundComponent } from './not-found/not-found.component'
+import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './security/login/login.component';
+import { UserDetailComponent } from './header/user-detail/user-detail.component'
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { NotFoundComponent } from './not-found/not-found.component'
     ReviewsComponent,
     OrderSummaryComponent,
     NotFoundComponent,
+    LoginComponent,
+    UserDetailComponent,
   ],
   imports: [
     BrowserModule,
