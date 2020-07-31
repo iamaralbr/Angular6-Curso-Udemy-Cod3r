@@ -6,6 +6,9 @@
     "experimentalDecorators": true,
     "types": []
   },
+  "angularCompilerOptions": {
+    "preserveWhitespaces": true
+  },
   "files": [
     "src/main.ts",
     "src/polyfills.ts"

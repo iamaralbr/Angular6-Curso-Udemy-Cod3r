@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms'
+import { FormGroup, FormBuilder, FormControl, Validators, AbstractControl } from '@angular/forms'
 import { Router } from '@angular/router'
 import { RadioOption } from '../shared/radio/radio-option.model';
 import { OrderService } from '../shared/services/order.service';
@@ -36,15 +36,15 @@ export class OrderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.orderForm = this.formBuilder.group({
-      name: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
+    this.orderForm = new FormGroup({
+      name: new FormControl('', { validators: [Validators.required, Validators.minLength(5)] }),
       email: this.formBuilder.control('', [Validators.required, Validators.pattern(_EMAIL_PATTERN)]),
       emailConfirmation: this.formBuilder.control('', [Validators.required, Validators.pattern(_EMAIL_PATTERN)]),
       address: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
       number: this.formBuilder.control('', [Validators.required, Validators.pattern(_NUMBER_PATTERN)]),
       optionalAddress: this.formBuilder.control(''),
-      paymentOption: this.formBuilder.control('', [Validators.required])
-    }, { validator: compare('email', 'emailConfirmation') })
+      paymentOption: new FormControl('', { validators: [Validators.required], updateOn: 'change' })
+    }, { validators: [compare('email', 'emailConfirmation')], updateOn: 'blur' })
   }
 
   // use: {validator: OrderComponent.equalsTo}
