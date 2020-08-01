@@ -37,6 +37,7 @@ Expressões regulares usadas na validação de formulários
 
 Dependências dos pacotes que devem ficar em package.json:
 
+```
 {
   "name": "meat-app-starter",
   "version": "1.0.0",
@@ -97,7 +98,7 @@ Dependências dos pacotes que devem ficar em package.json:
     "typescript": "~3.9.5"
   }
 }
-
+```
 ## Créditos
 
 Todas as imagens usadas na aplicação são pertencentes a freepik.com
